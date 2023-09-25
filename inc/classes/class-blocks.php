@@ -22,7 +22,7 @@ class Blocks {
 		/**
 		 * Actions.
 		 */
-		add_filter( 'block_categories_all', [ $this, 'add_block_categories' ] );
+		add_filter( 'block_categories', [ $this, 'add_block_categories' ] );
 	}
 
 	/**
@@ -36,7 +36,7 @@ class Blocks {
 
 		$category_slugs = wp_list_pluck( $categories, 'slug' );
 
-		return in_array( 'aquila', $category_slugs, true ) ? $categories : array_merge(
+		return  in_array( 'aquila', $category_slugs, true ) ? $categories : array_merge(
 			$categories,
 			[
 				[
